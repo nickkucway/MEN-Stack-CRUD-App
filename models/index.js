@@ -11,6 +11,7 @@ db.on('connected', function () {
 });
 
 module.exports = {
-    Movie: require('./movie')
+    Movie: require('./movie'),
+    seedMovies: require('./seed')
 }
 

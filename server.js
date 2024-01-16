@@ -46,6 +46,20 @@ app.get('/', function (req, res) {
     res.send('movie app')
 });
 
+app.get('/seed', function (req, res) {
+    // Remove any existing Movies
+    db.Movie.deleteMany({})
+        .then(removedMovies => {
+            console.log(`Removed ${removedMovies.deletedCount} movies`)
+            // Seed the pets collection with the seed data
+            db.Movie.insertMany(db.seedMovies)
+                .then(addedMovies => {
+                    console.log(`Added ${addedMovies.length} movies`)
+                    res.json(addedMovies)
+                })
+        })
+});
+
 
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
