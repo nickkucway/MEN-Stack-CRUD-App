@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: `Edit ${movie.name}`}) %>
+    <link rel="stylesheet" href="/styles/form.css">
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+
+
+    <form method="POST" action="/movies/<%= movie._id %>?_method=PUT">
+        <!-- name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= movie.name %>" required>
+        <br>
+        <!-- Year -->
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" value="<%= movie.year %>" min="1900" max="2050" required>
+        <br>
+        <!-- length -->
+        <label for="length">Length:</label>
+        <input type="number" id="length" name="length" min="0" value="<%= movie.length %>" required>
+        <br>
+        <!-- genre -->
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" value="<%= movie.genre %>" required>
+        <br>
+        <!-- photo -->
+        <label for="photo">Photo Link:</label>
+        <input type="text" id="photo" name="photo" value="<%= movie.photo %>" required>
+        <br>
+        <!-- description -->
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="<%= movie.description %>" required>
+        <br>
+        <input type="submit" value="Edit Movie">
+    </form>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
+

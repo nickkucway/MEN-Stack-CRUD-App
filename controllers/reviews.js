@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 	    	for (let movie of movies) {
 	        	flatList.push(...movie.reviews)
 	    	}
-	    	res.json(flatList)
+	    	res.render('reviews/review-index',{reviews:flatList})
 		}
 	)
 });

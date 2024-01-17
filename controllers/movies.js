@@ -28,13 +28,13 @@ router.get('/', function (req, res) {
 
 router.post('/', (req, res) => {
     db.Movie.create(req.body)
-        .then(movie => res.json(movie))
+        .then(movie => res.redirect('/movies/' + movie._id))
 })
 
 
 // New Route (GET/Read): This route renders a form 
 router.get('/new', (req, res) => {
-    res.send('You\'ve hit the new route!')
+    res.render('movies/new-movie')
 })
 
 
@@ -57,7 +57,7 @@ router.put('/:id', (req, res) => {
         req.body,
         { new: true }
     )
-        .then(movie => res.json(movie))
+        .then(movie => res.redirect('/movies/' + movie._id))
 })
 
 // Destroy Route (DELETE/Delete): This route deletes a movie document 
@@ -70,7 +70,7 @@ router.delete('/:id', (req, res) => {
 // Edit Route (GET/Read): This route renders a form
 router.get('/:id/edit', (req, res) => {
     db.Movie.findById(req.params.id)
-        .then(movie => res.send('You\'ll be editing movie ' + movie._id))
+        .then(movie => res.render('movies/edit-movie', {movie: movie}))
 })
 
 
