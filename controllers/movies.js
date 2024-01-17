@@ -41,7 +41,11 @@ router.get('/new', (req, res) => {
 // Show Route (GET/Read): Will display an individual movie document
 router.get('/:id', function (req, res) {
     db.Movie.findById(req.params.id)
-        .then(movie => res.json(movie))
+    .then(movie => {
+        res.render('movies/movie-details', {
+            movie: movie
+        })
+    })
         .catch(() => res.send('404 Error: Page Not Found'))
 })
 

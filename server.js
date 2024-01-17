@@ -7,6 +7,7 @@ const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
 const moviesCtrl = require('./controllers/movies')
 const reviewsCtrl = require('./controllers/reviews')
+const methodOverride = require('method-override');
 
 
 
@@ -46,6 +47,8 @@ app.use(connectLiveReload());
 // this will take incoming strings from the body that are URL encoded and parse them 
 // into an object that can be accessed in the request parameter as a property called body (req.body).
 app.use(express.urlencoded({ extended: true }));
+// method override
+app.use(methodOverride('_method'));
 
 
 
@@ -83,7 +86,7 @@ app.use('/movies', moviesCtrl)
 app.use('/reviews', reviewsCtrl)
 
 app.get('/about', function (req, res) {
-    res.send('You\'ve hit the about route')
+    res.render('about')
 });
 
 
