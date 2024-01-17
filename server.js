@@ -15,6 +15,7 @@ const reviewsCtrl = require('./controllers/reviews')
 const db = require('./models');
 
 
+
 /* Create the Express app
 --------------------------------------------------------------- */
 const app = express();
@@ -51,7 +52,12 @@ app.use(express.urlencoded({ extended: true }));
 /* Mount routes
 --------------------------------------------------------------- */
 app.get('/', function (req, res) {
-    res.send('movie app')
+    db.Movie.find({ })
+        .then(movies => {
+            res.render('home', {
+                movies: movies
+            })
+        })
 });
 
 app.get('/seed', function (req, res) {

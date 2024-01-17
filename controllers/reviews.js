@@ -1,6 +1,6 @@
 /* 
 ---------------------------------------------------------------------------------------
-NOTE: Remember that all routes on this page are prefixed with `localhost:3000/applications`
+NOTE: Remember that all routes on this page are prefixed with `localhost:3000/reviews`
 ---------------------------------------------------------------------------------------
 */
 
@@ -59,8 +59,10 @@ router.get('/:id', (req, res) => {
         .then(movie => {
 	        // format query results to appear in one object, 
 	        // rather than an object containing an array of one object
-            res.json(movie.applications[0])
+            res.json(movie.reviews[0])
         })
+        .catch(() => res.send('404 Error: Page Not Found'))
+
 });
 
 // Destroy Route: DELETE localhost:3000/reviews/:id
