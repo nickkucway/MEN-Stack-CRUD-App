@@ -36,8 +36,9 @@ router.get('/', (req, res) => {
 });
 
 // New Route: GET localhost:3000/reviews/new
-router.get('/new/:movieId', (req, res) => {
-    res.send('You\'ve reached the new route. You\'ll be making a new review for movie ' + req.params.movieId)
+router.get('/new/:movieId', async (req, res) => {
+    const movie = await db.Movie.findById(req.params.movieId)
+    res.render('reviews/new-review', {movie: movie})
 })
 
 // Create Route: POST localhost:3000/reviews/
@@ -47,7 +48,7 @@ router.post('/create/:movieId', (req, res) => {
         { $push: { reviews: req.body } },
         { new: true }
     )
-        .then(movie => res.json(movie))
+        .then(movie => res.redirect('/movies/' + movie._id))
 });
 
 // Show Route: GET localhost:3000/reviews/:id

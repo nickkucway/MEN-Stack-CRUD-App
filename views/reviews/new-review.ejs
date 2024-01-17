@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: 'Write a review'}) %>
+    <link rel="stylesheet" href="/styles/form.css">
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <section class="hero">
+        <h4><i>You're reviewing <a href="/pets/<%= movie._id %>"><%= movie.name %></a></i></h4>
+    </section>
+
+    <form action="/reviews/create/<%= movie._id %>" method="POST">
+        <!-- reviewer name  -->
+        <label for="reviewer">Reviewer:</label><br>
+        <input type="text" id="reviewer" name="reviewer" required>
+        <br>
+        <!-- score  -->
+        <label for="score">Score:</label><br>
+        <input type="number" id="score" name="score" min="0" max="5" required>
+        <br>
+        <!-- content -->
+        <label for="content">Content:</label><br>
+        <input type="text" id="content" name="content" required>
+        <br>
+
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

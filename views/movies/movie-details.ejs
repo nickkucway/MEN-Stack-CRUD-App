@@ -17,8 +17,15 @@
             <p>released in <%= movie.year %></p>
             <p>genre: <%= movie.genre %></p>
             <p>Description: <%= movie.description %></p>
+            <p><strong>Reviews:</strong></p>
+            <% for (let review of movie.reviews) { %>
+                <p>Name: <%= review.reviewer %></p>
+                <p>score: <%= review.score %></p>
+                <p>Review: <%= review.content %></p>
+                <% } %>
         </section>
         <section class="buttons">
+            <button class="btn"><a href="/reviews/new/<%= movie._id %>">Review</a></button>
             <button class="btn"><a href="/movies/<%= movie._id %>/edit">Edit</a></button>
             <form method="POST" action="/movies/<%= movie._id %>?_method=DELETE">
                 <input class="btn" type="submit" value="Delete" />
