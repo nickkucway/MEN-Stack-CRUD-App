@@ -16,6 +16,15 @@
     </section>
 
     <main>
+        <section class="search">
+            <h3>Search For A Movie</h3>
+            <form method="GET" action="/results">
+                <label for="name">Movie Name:</label>
+                <input type="text" id="input" name="input" required>
+                <br>
+                <input class="btn" type="submit" value="Search"/>
+            </form>    
+        </section>
         <section class="listings">
             <ul>
                 <% for (let movie of movies) { %>

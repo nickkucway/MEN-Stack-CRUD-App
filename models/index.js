@@ -14,8 +14,8 @@ db.on('connected', function () {
 module.exports = {
     Movie: require('./movie'),
     seedMovies: require('./seed'),
-    getPage: async function (page) {
-        const apiMovies = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.APIKEY}&page=${page}`)
+    getResults: async function (input) {
+        const apiMovies = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.APIKEY}&query=${input}`)
         return apiMovies.data
     },
 }

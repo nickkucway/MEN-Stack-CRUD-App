@@ -22,8 +22,8 @@ const api = require('./models');
 /* Create the Express app
 --------------------------------------------------------------- */
 const app = express();
-
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 /* Configure the app to refresh the browser when nodemon restarts
 --------------------------------------------------------------- */
@@ -80,10 +80,13 @@ app.get('/seed', function (req, res) {
         })
 });
 
-app.get('/gallery', (req, res) => {
-    // Get the first page of popular movies
-    api.getPage(1)
-        // Render the EJS page with the movie data fater the AJAX request completes
+// api request results route 
+app.get('/results', (req, res) => {
+    res.redirect('/results/' + req.query.input)
+})
+
+app.get('/results/:input', (req, res) => {
+    api.getResults(req.params.input)
         .then(apiMovies => res.render('movies/api-results', {apiMovies: apiMovies.results}))
 })
 
