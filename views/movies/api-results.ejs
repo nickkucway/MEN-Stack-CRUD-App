@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: 'Movie App'}) %>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <main class="gallery">
+        <% for (let movie of apiMovies) { %>
+            <div class="movie-card">
+                <figure>
+                    <img src="<%= `https://image.tmdb.org/t/p/original/${movie.poster_path}` %>" alt="<%= movie.title %>" />
+                    <figcaption>
+                        <h3><%= movie.title %></h3>
+                    </figcaption>
+                </figure>
+            </div>
+        <% } %>
+    </main>
+    
+
+    
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
+
+

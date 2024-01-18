@@ -1,6 +1,7 @@
 // Require the Mongoose package & your environment configuration
 const mongoose = require('mongoose');
 require('dotenv').config()
+const axios = require('axios')
 
 // Connect to MongoDB Atlas
 mongoose.connect(process.env.MONGODBURI);
@@ -12,6 +13,10 @@ db.on('connected', function () {
 
 module.exports = {
     Movie: require('./movie'),
-    seedMovies: require('./seed')
+    seedMovies: require('./seed'),
+    getPage: async function (page) {
+        const apiMovies = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.APIKEY}&page=${page}`)
+        return apiMovies.data
+    },
 }
 

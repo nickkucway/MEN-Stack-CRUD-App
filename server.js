@@ -8,18 +8,21 @@ const connectLiveReload = require("connect-livereload");
 const moviesCtrl = require('./controllers/movies')
 const reviewsCtrl = require('./controllers/reviews')
 const methodOverride = require('method-override');
+const axios = require('axios');
 
 
 
 /* Require the db connection, models, and seed data
 --------------------------------------------------------------- */
 const db = require('./models');
+const api = require('./models');
 
 
 
 /* Create the Express app
 --------------------------------------------------------------- */
 const app = express();
+
 
 
 /* Configure the app to refresh the browser when nodemon restarts
@@ -76,6 +79,14 @@ app.get('/seed', function (req, res) {
                 })
         })
 });
+
+app.get('/gallery', (req, res) => {
+    // Get the first page of popular movies
+    api.getPage(1)
+        // Render the EJS page with the movie data fater the AJAX request completes
+        .then(apiMovies => res.render('movies/api-results', {apiMovies: apiMovies.results}))
+})
+
 
 // This tells our app to look at the `controllers/movies.js` file 
 // to handle all routes that begin with `localhost:3000/movies`
