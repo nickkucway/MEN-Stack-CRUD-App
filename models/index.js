@@ -18,5 +18,9 @@ module.exports = {
         const apiMovies = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.APIKEY}&query=${input}`)
         return apiMovies.data
     },
+    getDetails: async function (movieId) {
+        const movie = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.APIKEY}`)
+        return movie.data
+    }
 }
 

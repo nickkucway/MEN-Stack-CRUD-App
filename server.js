@@ -90,6 +90,11 @@ app.get('/results/:input', (req, res) => {
         .then(apiMovies => res.render('movies/api-results', {apiMovies: apiMovies.results}))
 })
 
+app.get('/results/new/:movieId', (req, res) => {
+    api.getDetails(req.params.movieId)
+        .then(movie => res.render('movies/api-entry', {movie: movie}))
+})
+
 
 // This tells our app to look at the `controllers/movies.js` file 
 // to handle all routes that begin with `localhost:3000/movies`
