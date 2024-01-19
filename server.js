@@ -25,15 +25,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-/* Configure the app to refresh the browser when nodemon restarts
---------------------------------------------------------------- */
-const liveReloadServer = livereload.createServer();
-liveReloadServer.server.once("connection", () => {
-    // wait for nodemon to fully restart before refreshing the page
-    setTimeout(() => {
-        liveReloadServer.refresh("/");
-    }, 100);
-});
+
 
 
 /* Configure the app (app.set)
@@ -44,6 +36,19 @@ app.set('views', path.join(__dirname, 'views'));
 
 /* Middleware (app.use)
 --------------------------------------------------------------- */
+// Detect if running in a dev environment
+if (process.env.ON_HEROKU === 'false') {
+    // Configure the app to refresh the browser when nodemon restarts
+    const liveReloadServer = livereload.createServer();
+    liveReloadServer.server.once("connection", () => {
+        // wait for nodemon to fully restart before refreshing the page
+        setTimeout(() => {
+        liveReloadServer.refresh("/");
+        }, 100);
+    });
+    app.use(connectLiveReload());
+}
+
 app.use(express.static('public'))
 app.use(connectLiveReload());
 // Body parser: used for POST/PUT/PATCH routes: 
@@ -66,19 +71,22 @@ app.get('/', function (req, res) {
         })
 });
 
-app.get('/seed', function (req, res) {
-    // Remove any existing Movies
-    db.Movie.deleteMany({})
-        .then(removedMovies => {
-            console.log(`Removed ${removedMovies.deletedCount} movies`)
-            // Seed the pets collection with the seed data
-            db.Movie.insertMany(db.seedMovies)
-                .then(addedMovies => {
-                    console.log(`Added ${addedMovies.length} movies`)
-                    res.json(addedMovies)
-                })
-        })
-});
+if (process.env.ON_HEROKU === 'false'){
+    
+    app.get('/seed', function (req, res) {
+        // Remove any existing Movies
+        db.Movie.deleteMany({})
+            .then(removedMovies => {
+                console.log(`Removed ${removedMovies.deletedCount} movies`)
+                // Seed the pets collection with the seed data
+                db.Movie.insertMany(db.seedMovies)
+                    .then(addedMovies => {
+                        console.log(`Added ${addedMovies.length} movies`)
+                        res.json(addedMovies)
+                    })
+            })
+    });
+}
 
 // api request results route 
 app.get('/results', (req, res) => {
