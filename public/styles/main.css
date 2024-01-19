@@ -75,4 +75,14 @@ footer>a{
     color: white;
     border: none;
     margin: 8px;
+    font-size: 18px;
+}
+.btn:hover{
+    background-color: #a98723;
+}
+.btn a{
+    font-size: 18px;
+}
+.btn a:hover{
+    text-decoration: none;
 }
