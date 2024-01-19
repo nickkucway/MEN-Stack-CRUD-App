@@ -13,7 +13,7 @@ img{
     height: 300px;
 }
 
-header,footer {
+header {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -36,6 +36,7 @@ a:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin: 0 auto;
 }
 .movie-card{
     min-width: 350px;
@@ -45,4 +46,21 @@ a:hover{
     padding: 24px;
     margin: 24px;
     max-width: 600px;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebf6ff;
+    height: 40vh;
+}
+
+footer{
+    color: white;
+    background-color: #323232;
+    padding: 24px;
+}
+footer>a{
+    color: white;
 }

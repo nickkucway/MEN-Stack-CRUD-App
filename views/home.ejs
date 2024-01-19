@@ -12,10 +12,6 @@
     <section class="hero">
         <h2>Log Your Movies</h2>
         <h3>Use our intuitive app to log your movies today</h3>
-        <a href="/about">About</a>
-    </section>
-
-    <main>
         <section class="search">
             <h3>Search For A Movie</h3>
             <form method="GET" action="/results">
@@ -25,6 +21,11 @@
                 <input class="btn" type="submit" value="Search"/>
             </form>    
         </section>
+    </section>
+
+    <main>
+        <h2>Your Backlog:</h2>
+
         <section class="listings">
                 <% for (let movie of movies) { %>
                     <div class="movie-card">
