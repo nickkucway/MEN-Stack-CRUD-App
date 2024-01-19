@@ -21,7 +21,7 @@ const db = require('../models')
 // Index Route (GET/Read): Will display all movies
 router.get('/', function (req, res) {
     db.Movie.find({})
-        .then(movie => res.json(movie))
+        .then(movies => res.render('movies/movies-index', {movies: movies}))
 })
 
 // Create Route (POST/Create): This route receives the POST request sent from the new route,
@@ -63,7 +63,7 @@ router.put('/:id', (req, res) => {
 // Destroy Route (DELETE/Delete): This route deletes a movie document 
 router.delete('/:id', (req, res) => {
     db.Movie.findByIdAndDelete(req.params.id)
-        .then(movie => res.send('You\'ve deleted movie ' + movie._id))
+        .then(movie => res.redirect('/'))
 })
 
 

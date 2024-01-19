@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: 'Movie App'}) %>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+
+        <section class="listings">
+            <h3>Your Backlog:</h3>
+            <ul>
+                <% for (let movie of movies) { %>
+                <li>
+                    <div class="card">
+                        <img src="<%= movie.photo %>">
+                        <div class="caption">
+                            <h4><%= movie.name %></h4>
+                            <a href="/movies/<%= movie._id %>">Details</a>
+                        </div>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

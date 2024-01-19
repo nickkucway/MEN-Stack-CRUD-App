@@ -10,7 +10,7 @@
     <%- include('../partials/nav.ejs') %>
 
     <section class="hero">
-        <h4><i>You're reviewing <a href="/pets/<%= movie._id %>"><%= movie.name %></a></i></h4>
+        <h4><i>You're reviewing <a href="/movies/<%= movie._id %>"><%= movie.name %></a></i></h4>
     </section>
 
     <form action="/reviews/create/<%= movie._id %>" method="POST">

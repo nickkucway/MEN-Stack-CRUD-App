@@ -1,3 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
 img{
     height: 300px;
+}
+
+header, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;    
 }
