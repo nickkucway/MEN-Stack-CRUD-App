@@ -26,19 +26,15 @@
             </form>    
         </section>
         <section class="listings">
-            <ul>
                 <% for (let movie of movies) { %>
-                <li>
-                    <div class="card">
+                    <div class="movie-card">
                         <img src="<%= movie.photo %>">
                         <div class="caption">
                             <h4><%= movie.name %></h4>
                             <a href="/movies/<%= movie._id %>">Details</a>
                         </div>
                     </div>
-                </li>
                 <% } %>
-            </ul>
         </section>
     </main>
 

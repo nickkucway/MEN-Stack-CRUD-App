@@ -6,9 +6,8 @@ const reviewSchema = require('./review.js')
 // Create a schema to define the properties of the pets collection
 const movieSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    year: { type: Number, min: 1900, max: 2050, required: true },
+    year: { type: Date, required: true },
     length: { type: Number, min: 0, required: true },
-    genre: { type: String, required: true },
     photo: { type: String, required: true },
     description: { type: String, required: true },
     dateAdded: { type: Date, default: Date.now },

@@ -17,16 +17,12 @@
         <input type="text" id="name" name="name" value="<%= movie.name %>" required>
         <br>
         <!-- Year -->
-        <label for="year">Year:</label>
-        <input type="number" id="year" name="year" value="<%= movie.year %>" min="1900" max="2050" required>
+        <label for="year">Date:</label>
+        <input type="date" id="year" name="year" value="<%= movie.year %>" min="1900" max="2050" required>
         <br>
         <!-- length -->
         <label for="length">Length:</label>
         <input type="number" id="length" name="length" min="0" value="<%= movie.length %>" required>
-        <br>
-        <!-- genre -->
-        <label for="genre">Genre:</label>
-        <input type="text" id="genre" name="genre" value="<%= movie.genre %>" required>
         <br>
         <!-- photo -->
         <label for="photo">Photo Link:</label>
