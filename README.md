@@ -57,7 +57,48 @@ This project is a movie logging application called The Watchlist
 ![erd](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/32b6b050-2039-4b1c-a18b-2fa474566271)
 </details>
 
+
+
 <details>
+<summary>Install Instructions</summary>
+
+to install this app on your own computer, first you will need to fork the repository. once you have cloned the repository to your local machine you will need to run terminal and :
+```
+cd <repository folder>
+```
+from here you will need to enable NPM using:
+```
+npm init -y
+```
+now, install the node packages
+```
+npm i
+```
+now, you will need to create a .env file
+```
+touch .env
+```
+within the env file you will want to add the follow:
+```
+PORT=3000
+MONGODBURI='your connection string here'
+APIKEY='tmdb apikey here'
+ON_HEROKU=false
+```
+from here you can run:
+```
+npm run dev
+```
+go to the following URL in your browser
+```
+http://localhost:3000
+```
+the app should now be running in your browser
+
+</details>
+
+<details>
+
 <summary>User Stories</summary>
 
 As a fan of movies, I want to be able to log which movies I've seen on this app, and review them.
