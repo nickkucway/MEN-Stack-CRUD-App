@@ -60,7 +60,11 @@ h4{
 footer{
     color: white;
     background-color: #323232;
-    padding: 24px;
+    padding: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
 }
 footer>a{
     color: white;
