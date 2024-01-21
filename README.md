@@ -22,8 +22,10 @@ This project is a movie logging application called The Watchlist
 
 <summary>:desktop_computer:Finished App:desktop_computer:</summary>
 
-![screencapture-localhost-3000-2024-01-21-11_19_08](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/25270b55-1d14-47a3-9ac7-129166ba988b)
-![screencapture-localhost-3000-results-star-wars-2024-01-21-11_19_41](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/d0bfe75a-8c83-4dbb-aa06-ec009c27fdf2)
+![screencapture-localhost-3000-2024-01-21-13_16_34](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/c979dd87-039b-4e10-bb74-e6c1ae80d4a3)
+![screencapture-localhost-3000-movies-2024-01-21-13_16_12](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/36d44f35-6579-487f-a057-a12b9edb8ea3)
+![screencapture-localhost-3000-movies-new-2024-01-21-13_16_51](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/6b57ae21-9367-420f-a62d-9a919226463b)
+![screencapture-localhost-3000-movies-65ad41c5c23e7ee1d78a6176-2024-01-21-13_16_19](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/48dd6f72-4770-422b-8269-efebcb1d581c)
 
 
 
