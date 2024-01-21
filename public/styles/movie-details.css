@@ -1,4 +1,11 @@
 .movie-card{
     margin: 50px auto;
 }
+.stars{
+    height: 25px
+}
 
+p{
+    margin: 8px;
+    font-size: 18px;
+}

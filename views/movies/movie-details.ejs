@@ -16,10 +16,24 @@
             <p><%= movie.length %> minutes long</p>
             <p>released on <%= movie.year %></p>
             <p>Description: <%= movie.description %></p>
-            <p><strong>Reviews:</strong></p>
+            <p><strong>Review:</strong></p>
             <% for (let review of movie.reviews) { %>
                 <p>Name: <%= review.reviewer %></p>
-                <p>score: <%= review.score %></p>
+                <p>score:
+                    <br> 
+                    <% if (review.score === 0) { %>
+                        <img class="stars" src="/assets/score-0.png"/>
+                    <% } else if (review.score === 1) { %>
+                        <img class="stars" src="/assets/score-1.png"/>
+                    <% } else if (review.score === 2) { %>
+                        <img class="stars" src="/assets/score-2.png"/>
+                    <% } else if (review.score === 3) { %>
+                        <img class="stars" src="/assets/score-3.png"/>
+                    <% } else if (review.score === 4) { %>
+                        <img class="stars" src="/assets/score-4.png"/>
+                    <% } else if (review.score === 5) { %>
+                        <img class="stars" src="/assets/score-5.png"/>
+                    <% } %>
                 <p>Review: <%= review.content %></p>
                 <% } %>
         </section>
@@ -31,6 +45,7 @@
             </form>
         </section>
     </div>
+    <%- include('../partials/footer-wrap.ejs') %>
 
     <%- include('../partials/footer.ejs') %>
 </body>
