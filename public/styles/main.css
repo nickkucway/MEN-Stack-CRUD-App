@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
 
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -50,15 +52,11 @@ header a{
     margin: 24px;
     max-width: 600px;
 }
-.hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #ebf6ff;
-    height: 25vh;
-}
 
+h4{
+    font-size: 22px;
+    margin: 10px;
+}
 footer{
     color: white;
     background-color: #323232;
@@ -85,4 +83,44 @@ footer>a{
 }
 .btn a:hover{
     text-decoration: none;
+}
+
+.info-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+
+}
+.info-card{
+    min-width: 350px;
+    color: white;
+    background-color: #1f3e5c;
+
+    padding: 24px;
+    margin: 24px;
+    max-width: 350px;
+}
+.info-card img{
+    height: 50px;
+    margin: 10px;
+}
+.info-card p{
+    font-size: 18px;
+    margin: 10px;
+
+}
+.info-card h3{
+    font-size: 24px;
+    margin: 10px;
+
+}
+.blue:hover{
+    background-color: #2e5d8a;
+}
+.yellow:hover{
+    background-color: #bb9737;
+}
+.green:hover{
+    background-color: #197549;
 }

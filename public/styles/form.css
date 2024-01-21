@@ -1,0 +1,23 @@
+.reviewing a {
+    color: #0c0c0c;
+}
+
+form{
+    background-color: #ebf6ff;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 25px;
+}
+
+input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    margin: 10px;
+    font-size: 18px;
+}
+
+label{
+    font-size: 24px;
+}

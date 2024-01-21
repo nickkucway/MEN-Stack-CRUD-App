@@ -9,9 +9,7 @@
 <body>
     <%- include('../partials/nav.ejs') %>
 
-    <section class="hero">
-        <h4><i>You're reviewing <a href="/movies/<%= movie._id %>"><%= movie.name %></a></i></h4>
-    </section>
+    <h4 class="reviewing"><i>You're reviewing <a class="reviewing" href="/movies/<%= movie._id %>"><%= movie.name %></a></i></h4>
 
     <form action="/reviews/create/<%= movie._id %>" method="POST">
         <!-- reviewer name  -->
