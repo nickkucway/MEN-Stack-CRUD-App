@@ -14,7 +14,7 @@ This project is a movie logging application called The Watchlist
 ![movie-site-homeindex](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/64314198-c760-495b-911b-d055c33833af)
 ![movie-site-form](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/fee7b9fe-fa0a-4c86-8d74-e1af9e2aed7d)
 ![movie-site-about](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/676bede6-6913-440c-9266-1d7381fa6fdf)
-![movie-site-reviews](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/d8ebff93-621d-4493-bcbc-995ce0fc314a)
+
 
 </details>
 
