@@ -87,6 +87,10 @@ MONGODBURI='your connection string here'
 APIKEY='tmdb apikey here'
 ON_HEROKU=false
 ```
+to sign up for mongo DB and get a connection string, visit: https://www.mongodb.com/
+
+to get an API key for TMDB, visit: https://developer.themoviedb.org/docs/getting-started
+
 from here you can run:
 ```
 npm run dev
@@ -122,6 +126,17 @@ Still have an issue with the date defaulting to the current day when editing a m
 <summary>:soon:Coming Next:soon:</summary>
 
 would like to add some kind of oauth to add users. 
+
+</details>
+
+<details>
+
+<summary>API </summary>
+
+for this app I used the TMDB Api
+https://developer.themoviedb.org/docs/getting-started
+
+
 
 </details>
 
