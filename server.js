@@ -50,7 +50,7 @@ if (process.env.ON_HEROKU === 'false') {
 }
 
 app.use(express.static('public'))
-app.use(connectLiveReload());
+// app.use(connectLiveReload());
 // Body parser: used for POST/PUT/PATCH routes: 
 // this will take incoming strings from the body that are URL encoded and parse them 
 // into an object that can be accessed in the request parameter as a property called body (req.body).
